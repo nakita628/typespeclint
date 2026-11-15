@@ -1,8 +1,12 @@
 accesstoken
+actionlint
 apikey
 authtoken
+elif
 iban
 idtoken
+openssf
+pipx
 refreshtoken
 sessiontoken
 textlint
@@ -10,3 +14,4 @@ tspconfig
 typespec
 typespeclint
 voidzero
+zizmor

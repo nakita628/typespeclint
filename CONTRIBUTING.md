@@ -15,7 +15,7 @@ pnpm readme   # regenerate what is generated from the rule definitions
 | Command             | What it checks                                                                                                                                  |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | `vp fmt --check`    | Formatting of code, JSON and Markdown (oxfmt, configured in `vite.config.ts`).                                                                  |
-| `vp run -r check`   | Code lint with type information and type check (oxlint, configured in `packages/tsplint/vite.config.ts`).                                       |
+| `vp run -r check`   | Code lint with type information and type check (oxlint, configured in `packages/typespeclint/vite.config.ts`).                                  |
 | `pnpm lint:md`      | markdownlint over the repository's Markdown.                                                                                                    |
 | `pnpm lint:text`    | textlint: the spelling of product names (TypeSpec, Node.js, OpenAPI, ...).                                                                      |
 | `pnpm lint:spell`   | cspell, American English plus `.cspell/words.txt`. Add a real word there; fix a typo.                                                           |
@@ -34,7 +34,7 @@ Each one is marked in the code with a `DEFAULT (may change)` comment that says w
 from:
 
 ```sh
-grep -rn "DEFAULT (may change)" packages/tsplint/src
+grep -rn "DEFAULT (may change)" packages/typespeclint/src
 ```
 
 When a default changes, `pnpm readme` updates the rule reference and
@@ -43,9 +43,9 @@ rules still report nothing on correctly written APIs.
 
 ## Layout
 
-- [`packages/tsplint`](./packages/tsplint): the linter. Its README is the project README (the root `README.md` is a symbolic link to it), so links in it to files of the repository are written as GitHub URLs.
+- [`packages/typespeclint`](./packages/typespeclint): the linter. Its README is the project README (the root `README.md` is a symbolic link to it), so links in it to files of the repository are written as GitHub URLs.
 - [`docs`](./docs): the API lint checklist, in English and Japanese.
 - [`examples`](./examples): projects linted in `pnpm test`.
 
 How to add a rule is described in the
-[Development section of the README](./packages/tsplint/README.md#development).
+[Development section of the README](./packages/typespeclint/README.md#development).

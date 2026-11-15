@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Checks that every link from the repository's Markdown to a file of the repository points at one
 // that is there: a relative link (`[CONTRIBUTING](CONTRIBUTING.md)`) and a link to this repository
-// on GitHub (`https://github.com/nakita628/tsplint/blob/main/docs/README.md`), which is how the
+// on GitHub (`https://github.com/nakita628/typespeclint/blob/main/docs/README.md`), which is how the
 // package README, also the root README through a symbolic link, names files. A file removed or
 // moved leaves such links behind, and nothing else notices: they only fail for the reader who
 // follows one. Anchors and query strings are not checked.
@@ -9,7 +9,7 @@ import { execFileSync } from 'node:child_process'
 import { existsSync, lstatSync, readFileSync } from 'node:fs'
 import path from 'node:path'
 
-const REPOSITORY = 'https://github.com/nakita628/tsplint/'
+const REPOSITORY = 'https://github.com/nakita628/typespeclint/'
 const GITHUB_PATH = /^(?:blob|tree)\/main\/([^#?)\s]+)/u
 // `[text](target)` and `[text](target "title")`.
 const INLINE_LINK = /\]\(\s*<?([^)\s>]+)>?(?:\s+"[^"]*")?\s*\)/gu

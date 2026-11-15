@@ -235,7 +235,7 @@ export default defineConfig({
 })
 ```
 
-すべてのルールの目的と NG / OK 例は [typespeclint の README](../../packages/tsplint/README.md) にあります。この形で設定したプロジェクトの例は [`examples/config`](../../examples/config) にあります。
+すべてのルールの目的と NG / OK 例は [typespeclint の README](../../packages/typespeclint/README.md) にあります。この形で設定したプロジェクトの例は [`examples/config`](../../examples/config) にあります。
 
 ## カスタムルールの作り方
 

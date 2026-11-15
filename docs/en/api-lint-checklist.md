@@ -283,7 +283,7 @@ export default defineConfig({
 })
 ```
 
-The [typespeclint README](../../packages/tsplint/README.md) documents every rule with a purpose and
+The [typespeclint README](../../packages/typespeclint/README.md) documents every rule with a purpose and
 an NG / OK example.
 [`examples/config`](../../examples/config) is a project configured this way.
 

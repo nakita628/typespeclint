@@ -8,7 +8,7 @@ TypeSpec [linter rules](https://typespec.io/docs/extending-typespec/linters/). G
 between organizations, so presets, severities and rule options are set in a `typespeclint.config.ts`,
 in the style of ESLint and oxlint.
 
-- [The API lint checklist](https://github.com/nakita628/tsplint/blob/main/docs/en/api-lint-checklist.md) typespeclint automates, and how to write a custom rule ([日本語](https://github.com/nakita628/tsplint/blob/main/docs/ja/api-lint-checklist.md)).
+- [The API lint checklist](https://github.com/nakita628/typespeclint/blob/main/docs/en/api-lint-checklist.md) typespeclint automates, and how to write a custom rule ([日本語](https://github.com/nakita628/typespeclint/blob/main/docs/ja/api-lint-checklist.md)).
 
 ## Usage
 
@@ -1176,7 +1176,7 @@ Three rules reach further than a single declaration, with limits to know about:
 
 ## License
 
-[MIT](https://github.com/nakita628/tsplint/blob/main/LICENSE)
+[MIT](https://github.com/nakita628/typespeclint/blob/main/LICENSE)
 
 ## Development
 
@@ -1190,7 +1190,7 @@ pnpm bench         # time the linter on a generated API (pass a size: pnpm bench
 ```
 
 The repository-wide checks (prose lint, generated files) are described in
-[CONTRIBUTING.md](https://github.com/nakita628/tsplint/blob/main/CONTRIBUTING.md).
+[CONTRIBUTING.md](https://github.com/nakita628/typespeclint/blob/main/CONTRIBUTING.md).
 
 To add a rule: write it with `defineRule` in `src/rules/`, add it to `ruleSpecs` in
 `src/rules/index.ts`, and add its purpose and NG / OK example to `src/rules/docs.ts` (a missing

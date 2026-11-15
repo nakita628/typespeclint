@@ -1,0 +1,13 @@
+accesstoken
+apikey
+authtoken
+iban
+idtoken
+refreshtoken
+sessiontoken
+textlint
+tspconfig
+tsplint
+typespec
+typespeclint
+voidzero

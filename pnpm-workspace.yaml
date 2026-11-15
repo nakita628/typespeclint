@@ -1,0 +1,8 @@
+packages:
+  - packages/*
+  - examples/*
+# What Vite+ asks of a project: every package that names `vite` gets the Vite+ core it builds
+# with, and one Vitest, the one `vp test` runs. Keep both in step with vite-plus (`vp --version`).
+overrides:
+  vite: npm:@voidzero-dev/vite-plus-core@1.4.0
+  vitest: 5.0.5

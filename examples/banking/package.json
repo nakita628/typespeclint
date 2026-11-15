@@ -1,0 +1,13 @@
+{
+  "name": "example-banking",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "tsp compile . --no-emit"
+  },
+  "dependencies": {
+    "@typespec/compiler": "^1.18.0",
+    "@typespec/http": "^1.18.0",
+    "typespeclint": "workspace:*"
+  }
+}

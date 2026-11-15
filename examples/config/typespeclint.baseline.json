@@ -1,0 +1,42 @@
+{
+  "operations": {
+    "GET /books": {
+      "request": {
+        "query:page_size": {
+          "optional": true,
+          "type": "int32"
+        }
+      },
+      "responses": {
+        "200": {
+          "[]": {
+            "optional": false,
+            "type": "object"
+          },
+          "[].id": {
+            "optional": false,
+            "type": "string"
+          },
+          "[].title": {
+            "optional": false,
+            "type": "string"
+          },
+          "[].published_at": {
+            "optional": false,
+            "type": "utcDateTime"
+          }
+        },
+        "default": {
+          "code": {
+            "optional": false,
+            "type": "string"
+          },
+          "message": {
+            "optional": false,
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

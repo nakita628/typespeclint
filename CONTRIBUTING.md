@@ -20,12 +20,26 @@ pnpm readme   # regenerate what is generated from the rule definitions
 | `pnpm lint:text`    | textlint: the spelling of product names (TypeSpec, Node.js, OpenAPI, ...).                                                                      |
 | `pnpm lint:spell`   | cspell, American English plus `.cspell/words.txt`. Add a real word there; fix a typo.                                                           |
 | `pnpm lint:links`   | Every relative link in the Markdown points at a file that exists.                                                                               |
+| `pnpm lint:actions` | The GitHub Actions workflows: actionlint (syntax) and zizmor (security, excused findings in `.github/zizmor.yml`). Skipped when not installed.  |
 | `pnpm readme:check` | The rule reference in the README, the header comment of each rule and `examples/config/typespeclint.config.full.ts` match the rule definitions. |
 
 The documents in `docs/en` and `docs/ja` say the same thing. Change them together.
 
 The `CI` workflow (`.github/workflows/ci.yml`) runs `pnpm test` and `pnpm check` on every pull
 request and on `main`.
+The `Lint` workflow (`.github/workflows/lint.yml`) installs actionlint and zizmor and runs
+`pnpm lint:actions`. To run it locally, install both (`pipx install actionlint-py zizmor`).
+
+## Release
+
+Bump `version` in `packages/typespeclint/package.json` and merge it to `main`. Once `CI` has
+passed on `main`, the `Release` workflow (`.github/workflows/release.yml`) sees that npm does not
+have that version yet, tags the commit `v<version>`, publishes the package to npm with provenance
+and creates the GitHub release with generated notes. A push that leaves the version alone changes
+nothing.
+
+Publishing uses npm trusted publishing from the `release` environment of the repository; no npm
+token is stored.
 
 ## Default values
 

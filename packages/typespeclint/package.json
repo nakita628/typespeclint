@@ -1,6 +1,6 @@
 {
   "name": "typespeclint",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Configurable API design linter for TypeSpec",
   "keywords": [
     "openapi",

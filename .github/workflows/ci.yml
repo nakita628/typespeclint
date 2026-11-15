@@ -1,0 +1,37 @@
+name: CI
+
+# What `pnpm check` and `pnpm test` run locally: formatting, code lint with type information,
+# the prose linters, the generated files, the unit tests and the example projects.
+#
+# The action versions are pinned to a commit; the tag is kept as a comment.
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      # Node.js 24: the examples load `typespeclint.config.ts` with type stripping (22.18 or later).
+      - uses: voidzero-dev/setup-vp@49c3e4e92c52e7f8392712a9267bbe71c5ab30e5 # v1.19.0
+        with:
+          node-version: '24'
+          cache: true
+
+      - run: vp install --frozen-lockfile
+
+      # setup-vp puts `vp` on PATH, not `pnpm`; `vp run` runs the root script with both available.
+      # `test` first: it builds the package, which the generated-file check of `check` reads.
+      - run: vp run test
+
+      - run: vp run check

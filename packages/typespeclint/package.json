@@ -1,0 +1,56 @@
+{
+  "name": "typespeclint",
+  "version": "0.0.1",
+  "description": "Configurable API design linter for TypeSpec",
+  "keywords": [
+    "openapi",
+    "typespec"
+  ],
+  "homepage": "https://github.com/nakita628/typespeclint#readme",
+  "bugs": {
+    "url": "https://github.com/nakita628/typespeclint/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nakita628/typespeclint.git",
+    "directory": "packages/typespeclint"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "vp pack",
+    "test": "vp test",
+    "readme": "pnpm build && node scripts/readme.mjs && node scripts/rule-comments.mjs && node scripts/full-config.mjs",
+    "readme:check": "pnpm build && node scripts/readme.mjs --check && node scripts/rule-comments.mjs --check && node scripts/full-config.mjs --check",
+    "check": "vp check",
+    "fix": "vp check --fix",
+    "bench": "vp pack && node bench/run.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@typespec/compiler": "^1.18.0",
+    "@typespec/http": "^1.18.0",
+    "@typespec/openapi": "^1.18.0",
+    "@typespec/openapi3": "^1.18.0",
+    "typescript": "^7.0.2",
+    "vite-plus": "1.4.0"
+  },
+  "peerDependencies": {
+    "@typespec/compiler": "^1.18.0",
+    "@typespec/http": "^1.18.0"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  }
+}

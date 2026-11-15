@@ -1,0 +1,14 @@
+{
+  // Markdown of the repository: the READMEs and docs/. node_modules and build output are not linted.
+  "config": {
+    "default": true,
+    // oxfmt lays the text out; line length and the table shape are its call, not this linter's.
+    "MD013": false,
+    // A heading is repeated on purpose where sections mirror each other (NG / OK per rule).
+    "MD024": { "siblings_only": true },
+    // The generated rule reference is delimited by HTML comments.
+    "MD033": false,
+  },
+  "globs": ["**/*.md"],
+  "ignores": ["**/node_modules/**", "**/dist/**", "**/tsp-output/**"],
+}

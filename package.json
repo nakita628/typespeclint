@@ -1,0 +1,26 @@
+{
+  "name": "typespeclint-monorepo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vp run --filter ./packages/typespeclint build",
+    "check": "vp fmt --check && vp run --filter ./packages/typespeclint check && pnpm lint && pnpm readme:check",
+    "fix": "vp fmt && vp run --filter ./packages/typespeclint fix",
+    "lint": "pnpm lint:md && pnpm lint:text && pnpm lint:spell && pnpm lint:links",
+    "lint:md": "markdownlint-cli2",
+    "lint:text": "textlint '**/*.md'",
+    "lint:spell": "cspell --no-progress .",
+    "lint:links": "node lint/links.mjs",
+    "readme": "pnpm --filter typespeclint readme",
+    "readme:check": "pnpm --filter typespeclint readme:check",
+    "test": "pnpm build && vp run --filter ./packages/typespeclint test && vp run --filter ./examples/config lint"
+  },
+  "devDependencies": {
+    "cspell": "^10.5.0",
+    "markdownlint-cli2": "^0.24.1",
+    "textlint": "^15.8.0",
+    "textlint-rule-terminology": "^5.2.16",
+    "vite-plus": "1.4.0"
+  },
+  "packageManager": "pnpm@11.7.0"
+}

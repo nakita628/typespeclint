@@ -1,1 +1,1 @@
-# typespeclint
+packages/typespeclint/README.md

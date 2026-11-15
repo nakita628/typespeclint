@@ -1,0 +1,4 @@
+# Hands control to typespeclint.config.ts.
+linter:
+  extends:
+    - typespeclint/recommended

@@ -1,0 +1,18 @@
+{
+  "rules": {
+    "terminology": {
+      "defaultTerms": false,
+      "terms": [
+        "TypeSpec",
+        "TypeScript",
+        "JavaScript",
+        "OpenAPI",
+        ["Node\\.?js", "Node.js"],
+        "GitHub",
+        "ESLint",
+        ["OAuth ?2", "OAuth2"],
+        ["OpenID Connect", "OpenID Connect"]
+      ]
+    }
+  }
+}

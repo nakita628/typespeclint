@@ -1,1 +1,1 @@
-# typespeclint
+packages/tsplint/README.md

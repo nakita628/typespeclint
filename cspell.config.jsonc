@@ -1,0 +1,21 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  // The prose of this repository is written in American English; the names it is full of
+  // (TypeSpec, the rule vocabulary, the tools) live in .cspell/words.txt.
+  "language": "en",
+  "dictionaries": ["typescript", "node", "npm", "softwareTerms", "project-words"],
+  "dictionaryDefinitions": [
+    { "name": "project-words", "path": "./.cspell/words.txt", "addWords": true },
+  ],
+  "useGitignore": true,
+  "ignorePaths": [
+    "node_modules",
+    "dist",
+    "tsp-output",
+    "pnpm-lock.yaml",
+    "**/*.png",
+    ".cspell/words.txt",
+  ],
+  "ignoreRegExpList": ["Urls", "Base64", "HexValues"],
+}

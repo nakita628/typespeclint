@@ -7,6 +7,7 @@ iban
 idtoken
 openssf
 pipx
+pypi
 refreshtoken
 sessiontoken
 textlint

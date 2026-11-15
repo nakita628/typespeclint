@@ -7,25 +7,48 @@
   ],
   "timezone": "Asia/Tokyo",
   "schedule": ["* * * * 6"],
-  "dependencyDashboardAutoclose": true,
+  "dependencyDashboard": {
+    "autoclose": true
+  },
   "osvVulnerabilityAlerts": true,
   "vulnerabilityAlerts": {
     "minimumReleaseAge": "1 day"
   },
   "platformAutomerge": false,
+  "ignorePaths": ["**/node_modules/**"],
+  "postUpdateOptions": ["pnpmDedupe"],
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
     "schedule": ["* * * * 6"]
   },
+  "customManagers": [
+    {
+      "description": "Tools the Lint workflow installs with pipx (actionlint-py, zizmor)",
+      "customType": "regex",
+      "managerFilePatterns": ["/^\\.github/workflows/[^/]+\\.ya?ml$/"],
+      "matchStrings": ["pipx install (?<depName>[A-Za-z0-9._-]+)==(?<currentValue>[^\\s]+)"],
+      "datasourceTemplate": "pypi"
+    }
+  ],
   "packageRules": [
     {
-      "matchDatasources": ["npm", "github-actions"],
+      "matchDatasources": ["npm", "github-actions", "pypi"],
       "minimumReleaseAge": "7 days"
+    },
+    {
+      "description": "The supported Node.js and TypeSpec ranges are a decision, not an update",
+      "matchDepTypes": ["engines", "peerDependencies"],
+      "enabled": false
     },
     {
       "matchPackageNames": ["@typespec/**"],
       "groupName": "typespec"
+    },
+    {
+      "description": "pnpm-workspace.yaml overrides must stay in step with vite-plus",
+      "matchPackageNames": ["vite-plus", "@voidzero-dev/vite-plus-core", "vitest"],
+      "groupName": "vite-plus"
     },
     {
       "matchUpdateTypes": ["pin", "pinDigest"],

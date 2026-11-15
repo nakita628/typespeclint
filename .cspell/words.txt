@@ -7,7 +7,6 @@ refreshtoken
 sessiontoken
 textlint
 tspconfig
-tsplint
 typespec
 typespeclint
 voidzero

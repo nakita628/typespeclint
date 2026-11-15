@@ -6,15 +6,15 @@
     "openapi",
     "typespec"
   ],
-  "homepage": "https://github.com/nakita628/tsplint#readme",
+  "homepage": "https://github.com/nakita628/typespeclint#readme",
   "bugs": {
-    "url": "https://github.com/nakita628/tsplint/issues"
+    "url": "https://github.com/nakita628/typespeclint/issues"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nakita628/tsplint.git",
-    "directory": "packages/tsplint"
+    "url": "git+https://github.com/nakita628/typespeclint.git",
+    "directory": "packages/typespeclint"
   },
   "files": [
     "dist"

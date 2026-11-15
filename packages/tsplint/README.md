@@ -1,4 +1,4 @@
-# TspLint
+# TypeSpec Lint
 
 A configurable API design linter for [TypeSpec](https://typespec.io/).
 
